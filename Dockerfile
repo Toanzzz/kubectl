@@ -8,5 +8,5 @@ RUN set -x \
   && chmod +x kubectl
 
 FROM alpine as final
-COPY --from=alpine /bin/kubectl /bin/sh /usr/bin/envsubst /bin/
+COPY --from=base /bin/kubectl /bin/sh /usr/bin/envsubst /bin/
 ENTRYPOINT ["/bin/sh"]
